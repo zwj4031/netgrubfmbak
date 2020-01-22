@@ -13,11 +13,8 @@ do
     fi
     mkdir releases
     i=`expr $i + 1`
-    echo "${i}" | ./build.sh
-    cp grubfm.iso releases/
-    cp grubfm*.efi releases/
-    cp loadfm releases/
-	cp tftpboot releases/
+    echo "${i}" | ./buildnet.sh
+    cp -r tftpboot releases/
     cd releases
     7z a ../netgrubfm-${lang}.7z *
     cd ..
