@@ -24,11 +24,11 @@ jobs:
 
       - name: make
         run: sudo echo "1" | sh ./buildnet.sh  
-      - name: ipxe for legacybios
+      - name: grubfm for net
         run: |
           rm -rf ./tftpboot/
           mkdir -p ./tftpboot/
-          find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
+          find ../src/bin/ -name "./tftpboot/*" | xargs -i mv -f {} ./tftpboot/
           
                  
       - name: Upload netgrubfm
