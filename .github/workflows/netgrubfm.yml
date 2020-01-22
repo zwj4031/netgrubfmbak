@@ -24,13 +24,14 @@ jobs:
 
       - name: make
         run: |
+          rm -rf ./netgrubfm/
+          mkdir -p ./netgrubfm/
           echo "y" | sudo apt-get install gettext
           sudo mkdir tftpboot
           echo "1" | sudo sh ./buildnet.sh  
       - name: grubfm for net
         run: |
-          rm -rf ./netgrubfm/
-          mkdir -p ./netgrubfm/
+          
           #find ./ -name "tftpboot/*" | xargs -i mv -f {} ./tftpboot/
           cp -r tftpboot ./netgrubfm/  
           
