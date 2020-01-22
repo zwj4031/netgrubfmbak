@@ -30,9 +30,9 @@ jobs:
           sudo mkdir tftpboot
           echo "1" | sudo sh ./buildnet.sh  
       - name: grubfm for net
-        run: |
-          
-          #find ./ -name "tftpboot/*" | xargs -i mv -f {} ./tftpboot/
+        run: |    
+          ls tftpboot
+          ls netgrubfm
           cp -r tftpboot ./netgrubfm/  
           
                  
