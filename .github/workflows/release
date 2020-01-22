@@ -32,8 +32,8 @@ jobs:
           
                  
 
-    - name: makepkg
-      run: ./makepkg.sh
+    - name: makegz
+      run: ./releasenet.sh
     - name: upload
       uses: marvinpinto/action-automatic-releases@latest
       with:
