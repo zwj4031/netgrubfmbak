@@ -29,6 +29,9 @@ jobs:
           rm -rf ./netgrubfm/
           mkdir -p ./netgrubfm/
           #find ./ -name "tftpboot/*" | xargs -i mv -f {} ./tftpboot/
+          ls ./
+          ls ./netgrubfm/
+          ls tftpboot
           cp -r ./netgrubfm/tftpboot ./netgrubfm/  
           
                  
