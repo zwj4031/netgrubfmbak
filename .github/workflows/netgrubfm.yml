@@ -28,7 +28,7 @@ jobs:
         run: |
           rm -rf ./tftpboot/
           mkdir -p ./tftpboot/
-          find ../src/bin/ -name "./tftpboot/*" | xargs -i mv -f {} ./tftpboot/
+          find ../ -name "./tftpboot/*" | xargs -i mv -f {} ./tftpboot/
           
                  
       - name: Upload netgrubfm
