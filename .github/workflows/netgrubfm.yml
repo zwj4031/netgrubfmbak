@@ -26,7 +26,7 @@ jobs:
         run: |
          
         find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
-      - name: Upload netgrubfm
+      - name: Upload grubfm
         uses: actions/upload-artifact@master
         with:
           name:netgrubfm
