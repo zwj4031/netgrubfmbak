@@ -18,5 +18,4 @@ do
     cd releases
     7z a ../netgrubfm-${lang}.7z *
     cd ..
-    rm -r releases
 done
