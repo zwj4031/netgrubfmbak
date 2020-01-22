@@ -22,9 +22,11 @@ jobs:
 
       - name: make
         run: echo "1" | ./buildnet.sh  
+     
       - name: netgrubfm
         run: |         
         find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
+     
       - name: Upload tftpboot
         uses: actions/upload-artifact@master
         with:
