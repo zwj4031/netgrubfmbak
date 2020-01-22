@@ -28,9 +28,7 @@ jobs:
           ls tftpboot
           ls netgrubfm
           cp -r tftpboot ./netgrubfm/  
-          
-                 
-
+ 
     - name: makegz
       run: sudo ./releasenet.sh
     - name: upload
