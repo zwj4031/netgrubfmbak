@@ -30,7 +30,8 @@ jobs:
           cp -r tftpboot ./netgrubfm/  
           
       - name: makegz
-        run: sudo sh ./releasenet.sh
+        run: |
+          sudo sh ./releasenet.sh
    
       - name: upload
         uses: marvinpinto/action-automatic-releases@latest
