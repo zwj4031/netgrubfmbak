@@ -39,5 +39,5 @@ jobs:
           automatic_release_tag: "netgrubfm"
           prerelease: false
           title: "Development Build"
-          files: netgrubfm-zh_CN.tar.gz
+          files: netgrubfm.tar.gz
         

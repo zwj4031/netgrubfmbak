@@ -1,21 +1,7 @@
 #!/usr/bin/env sh
-if [ -e "netgrubfm*.7z" ]
+if [ -e "netgrubfm.tar.gz" ]
 then
-    rm netgrubfm*.7z
+    rm netgrubfm.tar.gz
 fi
-
-i=0
-for lang in zh_CN zh_TW en_US tr_TR de_DE vi_VN ru_RU he_IL
-do
-    if [ -d "releases" ]
-    then
-        rm -r releases
-    fi
-    mkdir releases
-    i=`expr $i + 1`
-    echo "${i}" | ./buildnet.sh
-    cp -r tftpboot releases/
-    cd releases
-    7z a ../netgrubfm-${lang}.7z *
-    cd ..
-done
+tar -zcvf grub.tar.gz tftpboot
+mv grub.tar.gz ../../netgrubfm.tar.gz
