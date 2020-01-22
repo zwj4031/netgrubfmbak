@@ -5,3 +5,5 @@ then
 fi
 tar -zcvf grub.tar.gz tftpboot
 mv grub.tar.gz ../netgrubfm.tar.gz
+ls ../
+ls ../../
