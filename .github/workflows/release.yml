@@ -31,6 +31,7 @@ jobs:
           
       - name: makegz
         run: sudo ./releasenet.sh
+   
       - name: upload
       uses: marvinpinto/action-automatic-releases@latest
       with:
@@ -39,3 +40,4 @@ jobs:
         prerelease: false
         title: "Development Build"
         files: netgrubfm-latest.tar.gz
+        
