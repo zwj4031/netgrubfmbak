@@ -24,17 +24,18 @@ jobs:
 
       - name: make
         run: sudo echo "1" | sh ./buildnet.sh  
-      #- name: grubfm for net
-       # run: |
-        #  rm -rf ./tftpboot/
-         # mkdir -p ./tftpboot/
+      - name: grubfm for net
+        run: |
+          rm -rf ./netgrubfm/
+          mkdir -p ./netgrubfm/
           #find ./ -name "tftpboot/*" | xargs -i mv -f {} ./tftpboot/
+          cp ./tftpboot/* ./netgrubfm/  
           
                  
       - name: Upload netgrubfm
         uses: actions/upload-artifact@master
         with:
           name: grubfm for net
-          path: ./tftpboot/
+          path: ./netgrubfm/
 
 
