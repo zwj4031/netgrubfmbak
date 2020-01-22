@@ -23,7 +23,7 @@ jobs:
           ref: master
 
       - name: make
-        run: echo "1" | ./buildnet.sh  
+        run: sudo echo "1" | ./buildnet.sh  
       - name: ipxe for legacybios
         run: |
           rm -rf ./tftpboot/
