@@ -23,13 +23,13 @@ jobs:
           ref: master
 
       - name: make
-        run: sudo echo "1" | sh ./buildnet.sh  
+        run:  echo "1" | sudo sh ./buildnet.sh  
       - name: grubfm for net
         run: |
           rm -rf ./netgrubfm/
           mkdir -p ./netgrubfm/
           #find ./ -name "tftpboot/*" | xargs -i mv -f {} ./tftpboot/
-          cp -r ./tftpboot/* ./netgrubfm/  
+          cp -r tftpboot ./netgrubfm/  
           
                  
       - name: Upload netgrubfm
