@@ -27,6 +27,8 @@ jobs:
           rm -rf ./netgrubfm/
           mkdir -p ./netgrubfm/
           echo "y" | sudo apt-get install gettext
+          echo "y" | sudo apt-get install mkisofs
+          echo "y" | sudo apt-get install genisoimage
           sudo mkdir tftpboot
           echo "1" | sudo sh ./buildnet.sh  
       - name: grubfm for net
