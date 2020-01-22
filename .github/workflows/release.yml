@@ -28,10 +28,10 @@ jobs:
           ls tftpboot
           ls netgrubfm
           cp -r tftpboot ./netgrubfm/  
- 
-    - name: makegz
+          
+      - name: makegz
       run: sudo ./releasenet.sh
-    - name: upload
+      - name: upload
       uses: marvinpinto/action-automatic-releases@latest
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
