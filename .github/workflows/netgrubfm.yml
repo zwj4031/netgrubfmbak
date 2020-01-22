@@ -1,4 +1,6 @@
 
+
+
 name: netgrubfm
 
 on:
@@ -22,13 +24,17 @@ jobs:
 
       - name: make
         run: echo "1" | ./buildnet.sh  
-     
-      - name: netgrubfm
-        run: |         
-        find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
-     
-      - name: Upload tftpboot
+      - name: ipxe for legacybios
+        run: |
+          rm -rf ./tftpboot/
+          mkdir -p ./tftpboot/
+          find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
+          
+                 
+      - name: Upload netgrubfm
         uses: actions/upload-artifact@master
         with:
-          name: netgrubfm
-          path: ./tftpboot/
+          name: grubfm for net
+          path: ./netgrubfm/
+
+
