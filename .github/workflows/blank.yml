@@ -1,0 +1,34 @@
+
+name: netgrubfm
+
+on:
+  push:
+    branches: 
+      - master
+  # schedule:
+  #   - cron: 0 20 * * *
+  # release:
+  #   types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+
+      - name: make
+        run: echo "1" | ./buildnet.sh  
+      - name: netgrubfm
+        run: |
+         
+         # find ../src/bin/ -name "*tftpboot*" | xargs -i mv -f {} ./tftpboot/
+                           
+      - name: Upload netgrubfm
+        uses: actions/upload-artifact@master
+        with:
+          name:netgrubfm
+          path: ./tftpboot/
