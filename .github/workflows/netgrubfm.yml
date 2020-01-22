@@ -24,9 +24,9 @@ jobs:
 
       - name: make
         run: |
-        echo "y" | apt-get install gettext
-        mkdir tftpboot
-        echo "1" | sudo sh ./buildnet.sh  
+          echo "y" | apt-get install gettext
+          sudo mkdir tftpboot
+          echo "1" | sudo sh ./buildnet.sh  
       - name: grubfm for net
         run: |
           rm -rf ./netgrubfm/
